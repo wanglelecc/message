@@ -1,14 +1,17 @@
-<!doctype html>
-<html lang="{{ config('app.locale') }}">
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.lug.ustc.edu.cn/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
         <style>
@@ -79,15 +82,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Welcome!
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://github.com/wanglelecc/message/docs">Documentation</a>
+                    <a href="https://github.com/wanglelecc/message/wiki">Wiki</a>
+                    <a href="https://www.wanglele.cc/">Blog</a>
+                    <a href="http://www.jianshu.com/u/ca1bb6f04749/">JianShu</a>
+                    <a href="https://github.com/wanglelecc/message">GitHub</a>
                 </div>
             </div>
         </div>

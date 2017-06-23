@@ -16,7 +16,21 @@
 //});
 
 Route::auth();
-Route::get('/', 'HomeController@index');
+Route::get('/', function(){
+    return view('welcome');
+});
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group([
+//    'prefix' => 'admin',
+//    'namespace' => 'Admin',
+    'middleware' => ['auth'],
+    ], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/wechat', 'WechatController@index')->name('wechat');
+    Route::get('/wechat/message', 'WechatController@message');
+    Route::get('/wechat/message2', 'WechatController@message2');
+});
+
+Route::any('/wechat', 'WechatController@serve');
